@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.com.amazonaws.util.IOUtils.release
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -14,6 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
     }
 
     buildTypes {
@@ -44,3 +47,15 @@ group = "com.github.Aqeldev" // Replace with your group ID
 version = "1.0.0" // Replace with your version
 
 
+// Publishing configuration (details needed)
+publishing {
+    publications {
+        register("release", MavenPublication::class) {
+            groupId = group.toString()
+            artifactId = project.name
+            version = version
+            // Add configurations and artifacts here (explained later)
+        }
+
+    }
+}
