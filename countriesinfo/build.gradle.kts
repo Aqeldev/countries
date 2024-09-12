@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+
+    `maven-publish`
 }
 
 android {
@@ -36,3 +38,9 @@ dependencies {
 
 
 }
+
+// Add the publishing configuration below
+group = "com.github.Aqeldev" // Replace with your group ID
+version = "1.0.0" // Replace with your version
+
+
